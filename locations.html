@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations and Dates</title>
+    <style>
+        h1{
+            color: #dcdcdc;
+            text-align: center;
+        }
+        body{
+            background-color:  #1a1a1a;
+        }
+        .container {
+            background-color: #333333;
+            border: 1px solid;
+            border-radius: 8px;  /*divlerin köşelerini yuvarlamak için*/
+            padding: 20px; /*üst ve alt kenarladan boşluk bırakıyor.*/
+            margin: 15px 0; /*yanındakiler ile arasındaki uzaklığı belirtir yukarıdan aşağı 15 sağdan soldan 0*/
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+           transition: transform 0.3s ease; /*oluşacaka değişimin hareketin yumuşaklığını ayarlar.*/
+        }
+        .container p {
+            text-align: center;
+            color: #dcdcdc;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: large;
+            line-height: 1.6; /*Satır yğksekliğinı ayarlar.*/
+        }
+        .container strong {
+            color: #ff9933;
+        }
+        .container ul {
+            text-align: center;
+            list-style: none;  /*madde işareti olmasın*/
+            padding: 0;
+        }
+        .container li {
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease; /*oluşacak değişimin geçiş yumuşaklığı ile ilgii */
+        }
+    </style>
+</head>
+<body>
+    <h1>Location and Concert Dates</h1>
+    {{range  $locations ,$date:= .DatesLocations}}  <!--map yapısı kullanıdığı için anahatar olarak locations ve date ileilişkilendirilmiş yapılarına ulaşmak için kullanıldı. -->
+    <div class="container">  
+        <p><strong>Location:</strong> {{$locations}}</p>  <!--locations verilerini aldı-->
+        <p><strong>Date:</strong>
+        <ul>
+            {{range $index, $date := $date}} <!--tarihler birden fazla olabileceği için bir dogüye soktuk ve değerleri liste içine aldık ki bir düzende gelsin-->
+            <li>{{$date}}</li> <!--dates verilerni aldı-->
+            {{end}}
+        </ul>
+    </p>
+        
+    </div>
+    {{end}}
+</body>
+</html>

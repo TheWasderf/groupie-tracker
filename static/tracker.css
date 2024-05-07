@@ -1,0 +1,55 @@
+body {
+    background-color: #1a1a1a; /* Koyu gri tonu */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex; /*esneklik sağlar*/
+    flex-wrap: wrap; /* ögelerin kutu içerisine sığamamsı halinde bir sonraki satıra geçmeesini sağlar.*/
+    justify-content: center;
+    padding-top: 20px;
+}
+h1 {
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    color: #ffffff; /* Beyaz renk */
+}
+div {
+    border: 1px solid #4d4d4d; /* Gri tonu kenarlık */
+    margin: 10px;
+    color: #ffffff;
+    padding: 20px;
+    background-color: #333333; /* Koyu gri tonu */
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; /*değişimle alakalı*/
+    flex: 0 1 calc(45% - 3em);
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /*Gölgenin hixasını ne kadar olacağını bbelirti    rgba daki 0.2 opakloık belirtir.*/
+}
+div:hover {
+    background-color: #4d4d4d;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3); /* gölge */
+    transform: scale(1.05);
+}
+div:not(:hover) {
+    opacity: 1.2; /*imleç div üzerinde değilse opaklık sağlar*/
+}
+img {
+    display: block; /*kendisiene ait satırı kaplar bunun için*/
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+form {
+    text-align: center;
+}
+button {
+    transition: transform 0.3s, background-color 0.3s;
+    background-color: #ff9933; /* Turuncu tonu */
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+}
+button:hover {
+    transform: scale(0.9); /*ögenin boyutunun değişimi ile alakalı*/ 
+    background-color: #ff6600; /* Turuncuya yakın bir hover rengi */
+}

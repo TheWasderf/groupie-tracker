@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist</title>
+    <link rel="stylesheet" href="static/tracker.css">
+</head>
+<body>
+    <h1>Artist Data</h1>
+    {{range .}}
+        <div>
+            <img src="{{.Image}}" alt="{{.Name}}" title="{{.Name}}" style="max-width: 200px; max-height: 200px;">
+            <p><strong>ID:</strong> {{.ID}}</p>
+            <p><strong>Name:</strong> {{.Name}}</p>
+            <p><strong>Members:</strong>{{.Members}}</p>
+            <p><strong>Creation Date:</strong> {{.CreationDate}}</p>
+            <p><strong>First Album:</strong> {{.FirstAlbum}}</p>
+            <form action="/relations" method="post">
+                <p>
+                    <button type="submit">Location and Date</button>
+                </p>
+                <input type="hidden" name="id" value="{{.ID}}">
+            </form>    
+         
+        </div>
+    {{end}}
+</body>
+</html>
+
